@@ -9,4 +9,5 @@ Follow these steps:
    - If only analyzing part of the project, briefly explore the broader project structure to understand context
    - Describe how analyzed components and modules fit into the overall project architecture
    - Focus on relationships and interactions with existing components rather than isolated details
+   - Only document the modules that were actually analyzed - do not provide content for unanalyzed modules
    - Verify that the architecture overview accurately reflects the analyzed structure
