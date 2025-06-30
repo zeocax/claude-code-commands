@@ -11,7 +11,6 @@ Follow these steps:
      * Has clear boundaries and responsibilities
      * Would benefit from dedicated documentation for maintainability
    - Do not create docs for individual files or trivial components
-   - Organize files according to the analyzed directory structure within the current project
 3. Update the ProjectArchitecture in CLAUDE.md and make sure all content from this analysis is properly referenced:
    - Include links to all documentation files created in this analysis using @path/to/docs format
    - Reference all analyzed components and modules through their newly created documentation
