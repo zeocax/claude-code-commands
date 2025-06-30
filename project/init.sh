@@ -10,6 +10,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FILES_TO_COPY=(
     "CLAUDE.markdown:CLAUDE.md"
     "CONSTITUTION.markdown:CONSTITUTION.md"
+    "HUMAN.markdown:HUMAN.md"
     # "init.sh:init.sh"
 )
 
