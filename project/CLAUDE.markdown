@@ -47,7 +47,7 @@
     2.  **Analyzing a pre-existing codebase** to document how it currently works.
 
 ### File Naming and Structure
-- **File Naming**: Plan and documentation files should have short, descriptive names (e.g., `api.md`, `database.md`). There are no required prefixes.
+- **File Naming**: Plan and documentation files should have short, descriptive names (e.g., `api.md`, `database.md`). There are no required prefixes or special mandatory files.
 - **Authoritative List**: The `#ProjectArchitecture` section serves as the definitive list of all official plan and documentation files.
 - **Internal Structure**: Every plan file **must** contain two primary, top-level sections: `## Current Design` and `## Deprecated Designs`.
 
