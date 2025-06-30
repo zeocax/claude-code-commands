@@ -1,53 +1,53 @@
 # CoreDirectives
 # These are the fundamental rules that govern all your actions. You must adhere to them at all times.
 
-- **Plan-Before-Implement**: This is the first critical rule. Before writing any code, creating any file, or implementing any feature, you MUST perform the following check:
-    1.  **Verify Existence**: Confirm that the task is described in the relevant plan file (plans/overall_design.md or the specific plans/module_*.md).
-    2.  **Verify Conformance**: Ensure that the implementation you are about to create strictly conforms to the details specified in that plan.
-    3.  **If a plan is missing or incorrect, execute Directive #2.** Do not proceed with a default or assumed implementation.
+- **Plan-Before-Implement**: This is the first critical rule. Before writing any code or implementing any feature, you MUST ensure it is described in a plan file that is **referenced in the #ProjectArchitecture manifest**. You must strictly conform to the details in that referenced plan.
 
-- **Autonomous Plan Maintenance**: This is the second critical rule. You are responsible for the automatic creation and maintenance of **all** project plan files.
-    * **Scope of Responsibility**: Your maintenance responsibility covers both the central plans/overall_design.md file and the various module-specific files that you create and name (e.g., plans/module_*.md).
-    * **Action on Missing Plan**: When the "Plan-Before-Implement" check fails because a plan is missing or outdated, you must take the initiative. Propose a new or updated plan based on the current context, update the correct file according to the PlanningMethodology, and ask for user confirmation before proceeding.
+- **Autonomous Plan Maintenance**: This is the second critical rule. You are responsible for the automatic creation and maintenance of project plan files.
+    * **Action on Missing Plan**: If a plan is needed for a new component, you must:
+        1. Propose a new plan with a descriptive filename (e.g., `plans/api_gateway.md`).
+        2. After user confirmation, create the file and populate its design.
+        3. **Crucially, you must then add a new entry to the `#ProjectArchitecture` manifest that references your new plan file (e.g., `@plans/api_gateway.md`).**
 
-- **Promote Plan to Documentation**: This is the third critical rule. **After a feature is implemented, its plan becomes its documentation.**
-    * **Action**: Once a feature is complete, **transfer the finalized Current Design content from its plan file** (e.g., plans/module_api.md) **to a new, corresponding file in the /docs directory** (e.g., docs/api.md). The plan's technical design becomes the official documentation.
-    * **Timing**: This action should be performed after the feature has been successfully implemented and is considered complete.
+- **Promote Plan to Documentation**: This is the third critical rule. After a feature is implemented, its plan becomes its documentation.
+    * **Action**: Once a feature is complete, transfer the finalized `Current Design` from its plan file to a new, corresponding file in the `/docs` directory.
+    * **Update Manifest**: After creating the documentation file, you **must update the corresponding entry in the `#ProjectArchitecture` manifest** to include the new `@docs/...` reference.
 
 ---
 
 # HumanGuidelines
-# References the human.md file, which contains user preferences, project constants, style guides, folder maps, and API secrets.
+# References the `human.md` file, which contains user preferences, project constants, style guides, folder maps, and API secrets.
 
 @human.md
 
 ---
 
 # ProjectArchitecture
-# High-level overview of the project's structure, components, and interactions.
+# This section is the central manifest of the project. It lists all major components and links to their corresponding plan and documentation files using `@` notation. You must keep this section updated.
+
+- **Component A**: [Description of Component A]. Design: `@plans/component-a.md` | Docs: `@docs/component-a.md`
+- **Component B**: [Description of Component B]. Design: `@plans/component-b.md`
 
 ---
 
 # PlanningMethodology
-# Defines the structure and update process for project design documents in the plans/ directory.
+# Defines the structure and update process for project design documents.
 
 ### File Naming and Structure
-- **Overall Design**: The primary project design must be in plans/overall_design.md. This filename is fixed.
-- **Module Designs**: Each module has its own document, named by you using the pattern plans/module_[module_name].md.
-- **Internal Structure**: Every plan file **must** contain two primary, top-level sections: ## Current Design and ## Deprecated Designs.
+- **File Naming**: Plan and documentation files should have short, descriptive names (e.g., `api.md`, `database.md`). There are no required prefixes.
+- **Authoritative List**: The `#ProjectArchitecture` section serves as the definitive list of all official plan and documentation files.
+- **Internal Structure**: Every plan file **must** contain two primary, top-level sections: `## Current Design` and `## Deprecated Designs`.
 
 ### How to Update a Plan
-**Your goal is to ensure the ## Current Design section always reflects the latest state, while the ## Deprecated Designs section contains a history of obsolete parts.**
+**Your goal is to ensure the `## Current Design` section always reflects the latest state, while the `## Deprecated Designs` section contains a history of obsolete parts.**
 
-1.  **Identify Obsolete Parts**: When a portion of the current design is being replaced or removed, identify that specific part within the ## Current Design section.
-2.  **Archive Granularly**: **Move only the obsolete part** from ## Current Design into ## Deprecated Designs. Place it under a new subheading that includes the date and the reason for the change.
-3.  **Update Current Design**: Modify the ## Current Design section to include the new, updated information in its correct place.
+1.  **Identify Obsolete Parts**: When a portion of the current design is being replaced or removed, identify that specific part within the `## Current Design` section.
+2.  **Archive Granularly**: **Move only the obsolete part** from `## Current Design` into `## Deprecated Designs`. Place it under a new subheading that includes the date and the reason for the change.
+3.  **Update Current Design**: Modify the `## Current Design` section to include the new, updated information in its correct place.
 
 ### Context Loading Rules
-**The /plans and /docs directories share the same structure and reading rules.**
-
-- **Mandatory Context**: The overall design files (plans/overall_design.md and docs/overall_design.md) are considered core project context. They **must** be loaded for any significant task.
-- **On-Demand Context**: All module-specific files in both /plans and /docs are considered on-demand context. You should only read a specific module's file when the current task or question is directly related to that module.
+- **Mandatory Context**: The entirety of this file, `CLAUDE.md`, is the core mandatory context.
+- **On-Demand Context**: You should use the `@` links within the `#ProjectArchitecture` manifest to find and read specific plan or documentation files from the `/plans` and `/docs` directories as needed for the current task.
 
 ---
 
