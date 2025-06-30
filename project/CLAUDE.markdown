@@ -1,3 +1,7 @@
+# This file is the central source of truth for the project context.
+
+---
+
 # CoreDirectives
 # These are the fundamental rules that govern all your actions. You must adhere to them at all times.
 
@@ -32,6 +36,15 @@
 
 # PlanningMethodology
 # Defines the structure and update process for project design documents.
+
+### Directory Purpose
+**To avoid confusion, the roles of the `/plans` and `/docs` directories are strictly defined:**
+
+-   **/plans**: This directory contains **prospective** design documents. A plan must be created and approved **before** any new feature is implemented. It describes what **will be** built.
+
+-   **/docs**: This directory contains **retrospective** technical documentation. It describes what **has been** built. Its content comes from two sources:
+    1.  **Promoting a completed plan** after the feature has been successfully implemented.
+    2.  **Analyzing a pre-existing codebase** to document how it currently works.
 
 ### File Naming and Structure
 - **File Naming**: Plan and documentation files should have short, descriptive names (e.g., `api.md`, `database.md`). There are no required prefixes.
