@@ -1,5 +1,5 @@
 # Project State & Logs
-# This file is governed by the rules in @CONSTITUTION.md.
+# This file is governed by the rules in @CONSTITUTION.md
 # It contains the dynamic state of the project and should be updated regularly.
 
 ---

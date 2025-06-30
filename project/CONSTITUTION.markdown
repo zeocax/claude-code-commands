@@ -17,9 +17,9 @@
 ---
 
 # HumanGuidelines
-# References the `human.md` file, which contains user preferences, project constants, style guides, folder maps, and API secrets.
+# References the `HUMAN.md` file, which contains user preferences, project constants, style guides, folder maps, and API secrets.
 
-@human.md
+@HUMAN.md
 
 ---
 
